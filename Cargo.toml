@@ -1,0 +1,20 @@
+[package]
+name = "crab-rave"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "A crab rave in your terminal"
+license = "MIT"
+repository = "https://github.com/yannelli/crab-rave"
+readme = "README.md"
+keywords = ["terminal", "ascii", "animation", "crab"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+crossterm = "0.29"
+rodio = { version = "0.23", default-features = false, features = ["playback"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
